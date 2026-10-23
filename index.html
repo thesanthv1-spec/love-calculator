@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Love Calculator ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 410px;
+      padding: 30px;
+      background: white;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 15px 40px #70204040;
+    }
+
+    .heart {
+      font-size: 52px;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      50% { transform: scale(1.13); }
+    }
+
+    h1 { color: #e63970; }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin: 12px 0;
+      border: 2px solid #ffd0df;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 14px;
+      border: 0;
+      border-radius: 12px;
+      background: #e63970;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #result { display: none; margin-top: 24px; }
+
+    #percentage {
+      font-size: 48px;
+      color: #e63970;
+      margin: 12px;
+    }
+
+    #status {
+      font-size: 13px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="heart">❤️</div>
+    <h1>Love Calculator</h1>
+    <p>Discover your fun compatibility score!</p>
+
+    <form id="loveForm">
+      <input id="boy" type="text"
+        placeholder="Enter boy's name 👦"
+        maxlength="60" autocomplete="off" required>
+
+      <input id="girl" type="text"
+        placeholder="Enter girl's name 👧"
+        maxlength="60" autocomplete="off" required>
+
+      <button id="calculate" type="submit">
+        Calculate Love 💕
+      </button>
+    </form>
+
+    <section id="result" aria-live="polite">
+      <p>Your fun compatibility score is</p>
+      <h2 id="percentage">0%</h2>
+      <p id="message"></p>
+      <p id="status"></p>
+      <button id="again" type="button">Try Again 🔄</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
